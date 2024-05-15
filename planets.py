@@ -1,45 +1,23 @@
 planet_list = ["Mercury", "Mars"]
-
+print(planet_list)
 planet_list.append("Jupiter")
+print(planet_list)
 planet_list.append("Saturn")
-
-
-planet_list.extend(["Uranus", "Neptune"])
-planet_list.extend(["Uranus", "Neptune"])
-
-
+print(planet_list)
+extended_list = ["Uranus", "Neptune"]
+planet_list.extend(extended_list)
+print(planet_list)
 planet_list.insert(1, "Venus")
-planet_list.insert(2, "Earth")
-
-
+index_of_venus = planet_list.index("Venus")
+planet_list.insert(index_of_venus + 1, "Earth")
+print(planet_list)
 planet_list.append("Pluto")
+print(planet_list)
+start_index = 0
+end_index = 4
 
-gassy_planets = [
-    "Mercury",
-    "Venus, Earth",
-    "Mars",
-    "Jupiter, Saturn",
-    "Uranus",
-    "Neptune",
-    "Pluto",
-]
-rocky_planets = gassy_planets.__getitem__(slice(4, 8))
+gas_planets = planet_list[end_index:]
+planet_list = planet_list[start_index:end_index]
 
-del rocky_planets[2]
-
-spacecraft = [
-    ("Pioneer", "Jupiter"),
-    ("Voyager", "Saturn"),
-    ("Galileo", "Jupiter"),
-    ("Voyager2", "Neptune"),
-    ("Pioneer11", "Saturn"),
-]
-
-for planet in planet_list:
-    visited_by = []
-
-    for craft, visited_planet in spacecraft:
-        if visited_planet == planet:
-            visited_by.append(craft)
-
-            print(f"{planet} was visited by {','.join(visited_by)}")
+print("Rocky Planets: ", planet_list)
+print("Gas Planets: ", gas_planets)

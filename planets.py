@@ -21,3 +21,13 @@ planet_list = planet_list[start_index:end_index]
 
 print("Rocky Planets: ", planet_list)
 print("Gas Planets: ", gas_planets)
+del planet_list[-1]
+print(planet_list)
+spacecraft = [("Voyager", "Uranus"), ("New Horizons", "Pluto"), ("Mariner 10", "Venus")]
+for planet in planet_list:
+    visited_by = []
+    for mission, destination_planet in spacecraft:
+        if planet == destination_planet:
+            visited_by.append(mission)
+    if visited_by:
+        print(f"{planet} has been visited by: {','.join(visited_by)}")
